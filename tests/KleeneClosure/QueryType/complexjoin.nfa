@@ -1,0 +1,5 @@
+SelectionStrategy = skip-till-next-match | TimeWindow = 500 
+State=1 & type = normal & eventtype = stock | edgetype = begin | edgetype = proceed
+State=2 & type = kleeneClosure & eventtype = stock | edgetype = take  & price > $1.price & volume < $1.volume 
+State=3 & type = normal & eventtype = stock | edgetype = begin 
+end

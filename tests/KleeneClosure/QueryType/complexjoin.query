@@ -1,0 +1,8 @@
+PATTERN SEQ(stock a, stock+ b[], stock c)
+WHERE skip-till-any-match
+AND [symbol]
+AND b[i].price > a.price
+AND b[i].volume < a.volume
+AND b[i].price > b[i-1].price
+AND c.price < min(b[..i-1].price)
+WITHIN 10000000
